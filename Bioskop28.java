@@ -20,5 +20,10 @@ public class Bioskop28 {
         for (String[] baris : penonton){
     System.out.println("Panjang baris : " + baris.length);
      }
+
+     System.out.println("Penonton pada baris -3: ");
+       for (int i = 0; i < penonton[2].length; i++) {
+        System.out.println(penonton[2][i]);
+       }
 }
 }
