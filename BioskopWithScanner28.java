@@ -41,6 +41,9 @@ public class BioskopWithScanner28 {
             for(int j = 0; j < 2; j++){
                 if (penonton[i][j] != null){
                     System.out.println("Baris " + (i+1) + ", Kolom " + (j+1) + ": " + penonton[i][j]);
+                }else {
+                    System.out.println("Baris " + (i+1) + ", Kolom" + (j+1) + ": ***");
+                    
                 }
             }
         }
@@ -54,12 +57,12 @@ public class BioskopWithScanner28 {
     }
           }
    }
-   static boolean isValidSeat(int baris, int kolom, String[][] penonton){
-    if (baris >= 1 && baris <= 4 && kolom >= 1 && kolom <=2){
-        if (penonton[baris - 1][kolom - 1] == null){
-            return true;
-        }
-    }
-    return false;
+          static boolean isValidSeat(int baris, int kolom, String[][] penonton){
+            if (baris >= 1 && baris <= 4 && kolom >= 1 && kolom <=2){
+                if (penonton[baris - 1][kolom - 1] == null){
+                    return true;
+                }
+            }
+            return false;
       }
 }
