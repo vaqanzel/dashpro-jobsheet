@@ -6,34 +6,35 @@ public class BioskopWithScanner28 {
         int baris, kolom;
         String nama, next;
         String[][] penonton = new String[4][2];
-        while (true) {
-            
+         
+        while (true) {    
             System.out.println("Menu : ");
             System.out.println("Input data penonton ");
             System.out.println("Tampilkan daftar penonton");
             System.out.println("Exit");
             System.out.print("Pilih menu (1/2/3) : ");
             
-        int menu = sc.nextInt(); switch (menu) {
-      case 1:
+        int menu = sc.nextInt(); 
+        
+        switch (menu) {
+        case 1:
             System.out.print("Masukkan nama : ");
             nama = sc.next();
             System.out.print("Masukkan baris : ");
             baris = sc.nextInt();
             System.out.print("Masukkan kolom : ");
             kolom = sc.nextInt();
-      sc.nextLine();
+            sc.nextLine();
     
-      if (baris >= 1 && baris <= 4 && kolom <= 1 && kolom<=2) {
-          penonton[baris - 1][kolom - 1] = nama;
-        System.out.println("Data penonton telah dimasukkan.");
+       if (baris >= 1 && baris <= 4 && kolom <= 1 && kolom<=2) {
+           penonton[baris - 1][kolom - 1] = nama;
+           System.out.println("Data penonton telah dimasukkan.");
      }else {
-        System.out.println("Baris atau kolom tidak valid.");
+           System.out.println("Baris atau kolom tidak ditemukan.");
         }
      break;
      case 2 :
-        System.out.println("Daftar Penonton : ");
-
+            System.out.println("Daftar Penonton : ");
         for (int i = 0; i < 4; i++){
             for(int j = 0; j < 2; j++){
                 if (penonton[i][j] != null){
@@ -52,4 +53,13 @@ public class BioskopWithScanner28 {
          }
        }
     }
+    static boolean isValidSeat (int baris, int kolom, String[][]penonton){
+        if (baris >= 1 && baris <= 4 && kolom >= 1 && kolom <=2){
+            if (penonton[baris - 1][kolom-1] == null){
+                return true;
+            }
+        }
+        return false;
+    }
 }
+
